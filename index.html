@@ -1,204 +1,62 @@
 <!DOCTYPE html>
-<html lang="ko" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-  <script>
-    Kakao.init(bc661dbab7406480128065c122fe89a2);
-    Kakao.isInitialized();
-  </script>
-    
-    <title>기분테스트를 통해 노래 추천 받기</title>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>면접 합격 기원</title>
     <style>
-      @font-face {
-  font-family: 'YUniverse-B';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body{
-  background-color: #CCEEDD;
-  font-family: 'YUniverse-B', sans-serif;
-}
-
-::selection {
-  background: #BBDDDD;
-}
-
-section {
-  height: 660px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#main{
-  background-color: #FFFFFF;
-  width: 80%;
-  text-align: center;
-  border-radius: 20px;
-}
-
-p{
-  font-size: 20px;
-}
-
-#qna {
-  display: none;
-  background-color: #FFFFFF;
-  width: 80%;
-  text-align: center;
-  border-radius: 20px;
-}
-
-.qBox {
-  text-align: center;
-  font-size: 24px;
-  width: 80%
-}
-
-.answerBox {
-  width: 100%;
-}
-
-.answerList, .btn {
-  border: 2px solid #8496E2;
-  border-radius: 10px;
-  display: block;
-  width: 80%;
-  height: 63px;
-  font-size: 18px;
-  background-color: #FFFFFF;
-}
-
-.answerList:hover, .answerList:focus,
-.btn:hover, .btn:focus {
-  background-color: #CCEEDD;
-}
-
-#result{
-  overflow:hidden;
-  height:auto;
-  display: none;
-  background-color: #FFFFFF;
-  width: 80%;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.resultName{
-  font-size: 26px;
-}
-
-.resultDesc{
-  font-size: 20px;
-}
-
-.youtube{
-  color:black;
-  background-color: #FFFFFF;
-  width: 80%;
-  text-align: center;
-  border:2px solid#8496E2 ;
-  border-radius: 10px;
-}
-
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-@-webkit-keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@-webkit-keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-.fadeIn{
-  animation: fadeIn;
-  animation-duration: 0.5s;
-}
-
-.fadeOut{
-  animation: fadeOut;
-  animation-duration: 0.5s;
-}
-
-@media screen and (min-width: 1200px) {
-  section {
-    height: 770px;
-  }
-}
-
-@media screen and (max-width: 990px) {
-  .resultDesc {
-    max-width: 400px;
-  }
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .emoji {
+            font-size: 50px;
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #357abd;
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <section id="main" class="mx-auto my-5 py-5 px-5">
-        <h1>기분테스트를 통해 노래 추천 받기</h1>
-        <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
-          <img src="/images/main1.png" alt="Inside Out" class="img-fluid">
-        </div>
-
-        <p>
-          오늘 하루 당신의 기분은 어땠나요? <br>
-          기분을 100% 맞출 수는 없지만 <br>
-          기분에 맞춰 음악을 추천해 드릴게요!<br>
-          (feat. youtube)
-        </p>
-
-        <button type="button" class="btn mt-3" onclick="js:begin()">시작하기</button>
-      </section>
-
-      <section id="qna" class="mx-auto my-5 py-5 px-3">
-        <div class="qBox my-3 py-3 mx-auto"></div>
-        <img src="/images/img00.jpg" alt="Inside Out" class="img-fluid">
-        
-        <div class="answerBox"></div>
-      </section>
-
-      <section id="result" class="mx-auto my-5 py-5 px-3" >
-        <h1>당신의 결과는?</h1>
-        <div class="resultName"></div>
-
-        <div id="resultImg" class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"></div>
-
-        <div class="resultDesc"></div>
-        <button type="button" class="youtube my-3 mt-3 py-2 px-3" onclick="location.href='playlist.html'">음악 들으러가기</button>
-        
-      </section>
+</head>
+<body>
+    <div class="card">
+        <h1>면접 합격 기원</h1>
+        <div class="emoji">🍀</div>
+        <p>윤성쨩 패티패티, 능력을 믿어! 이번 면접에서 멋진 모습 보여줄 거라 확신해.</p>
+        <p>무조건 합격 각이 보인다 삐리삐리용</p>
+        <p>좋은 결과 있기를!</p>
+        <button class="button">화이팅!</button>
     </div>
-
-    <script src="/js/qna.js" charset="utf-8"></script>
-    <script src="/js/main.js" charset="utf-8"></script>
-    
-  </body>
+</body>
 </html>
