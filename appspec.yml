@@ -1,5 +1,11 @@
 version: 0.0
 os: linux
 files:
-  - source: index.html
+  - source: /
     destination: /var/www/html
+  - source: /
+    destination: /var/www/html/images/
+  - source: /
+    destination: /var/www/html/js/
+  
+
