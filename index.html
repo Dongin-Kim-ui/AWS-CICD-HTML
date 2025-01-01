@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+  <script>
+    Kakao.init(bc661dbab7406480128065c122fe89a2);
+    Kakao.isInitialized();
+  </script>
+    
+    <title>기분테스트를 통해 노래 추천 받기</title>
+  </head>
+  <body>
+    <div class="container">
+      <section id="main" class="mx-auto my-5 py-5 px-5">
+        <h1>기분테스트를 통해 노래 추천 받기</h1>
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+          <img src="./images/main1.png" alt="Inside Out" class="img-fluid">
+        </div>
+
+        <p>
+          오늘 하루 당신의 기분은 어땠나요? <br>
+          기분을 100% 맞출 수는 없지만 <br>
+          기분에 맞춰 음악을 추천해 드릴게요!<br>
+          (feat. youtube)
+        </p>
+
+        <button type="button" class="btn mt-3" onclick="js:begin()">시작하기</button>
+      </section>
+
+      <section id="qna" class="mx-auto my-5 py-5 px-3">
+        <div class="qBox my-3 py-3 mx-auto"></div>
+        <img src="./images/img00.jpg" alt="Inside Out" class="img-fluid">
+        
+        <div class="answerBox"></div>
+      </section>
+
+      <section id="result" class="mx-auto my-5 py-5 px-3" >
+        <h1>당신의 결과는?</h1>
+        <div class="resultName"></div>
+
+        <div id="resultImg" class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"></div>
+
+        <div class="resultDesc"></div>
+        <button type="button" class="youtube my-3 mt-3 py-2 px-3" onclick="location.href='playlist.html'">음악 들으러가기</button>
+        
+      </section>
+    </div>
+
+    <script src="./js/qna.js" charset="utf-8"></script>
+    <script src="./js/main.js" charset="utf-8"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'YUniverse-B';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #CCEEDD;
+  font-family: 'YUniverse-B', sans-serif;
+}
+
+::selection {
+  background: #BBDDDD;
+}
+
+section {
+  height: 660px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#main{
+  background-color: #FFFFFF;
+  width: 80%;
+  text-align: center;
+  border-radius: 20px;
+}
+
+p{
+  font-size: 20px;
+}
+
+#qna {
+  display: none;
+  background-color: #FFFFFF;
+  width: 80%;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.qBox {
+  text-align: center;
+  font-size: 24px;
+  width: 80%
+}
+
+.answerBox {
+  width: 100%;
+}
+
+.answerList, .btn {
+  border: 2px solid #8496E2;
+  border-radius: 10px;
+  display: block;
+  width: 80%;
+  height: 63px;
+  font-size: 18px;
+  background-color: #FFFFFF;
+}
+
+.answerList:hover, .answerList:focus,
+.btn:hover, .btn:focus {
+  background-color: #CCEEDD;
+}
+
+#result{
+  overflow:hidden;
+  height:auto;
+  display: none;
+  background-color: #FFFFFF;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.resultName{
+  font-size: 26px;
+}
+
+.resultDesc{
+  font-size: 20px;
+}
+
+.youtube{
+  color:black;
+  background-color: #FFFFFF;
+  width: 80%;
+  text-align: center;
+  border:2px solid#8496E2 ;
+  border-radius: 10px;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fadeIn{
+  animation: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.fadeOut{
+  animation: fadeOut;
+  animation-duration: 0.5s;
+}
+
+@media screen and (min-width: 1200px) {
+  section {
+    height: 770px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .resultDesc {
+    max-width: 400px;
+  }
+}
