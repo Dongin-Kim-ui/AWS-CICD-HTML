@@ -19,9 +19,10 @@ phases:
     commands:
       - echo Post-build phase started
       - echo Copying HTML files to build output
-      - cp -r * /codebuild/output/src2873216469/src/
+      - mkdir -p /codebuild/output/src2043122978/src/
+      - cp -r * /codebuild/output/src2043122978/src/
 
 artifacts:
   files:
     - '**/*'
-  base-directory: /codebuild/output/src2873216469/src/
+  base-directory: /codebuild/output/src2043122978/src
